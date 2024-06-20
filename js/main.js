@@ -3,10 +3,12 @@ import { maquetar } from "./modules/galery.js";
 
 let container = document.querySelector("#mBDS2");
 let searchBar = document.querySelector("#inputSearch");
+let findUsersCont = document.querySelector("#findUsersCont");
 
 searchBar.addEventListener("change", async() => {
     console.log("Buscando...");
     container.innerHTML = "";
+    findUsersCont.innerHTML = 0;
 
     let text = searchBar.value;
     text = text.toLowerCase();

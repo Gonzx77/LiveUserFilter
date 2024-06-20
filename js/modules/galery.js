@@ -2,6 +2,7 @@ import { getUser } from "./app.js";
 
 let container = document.querySelector("#mBDS2");
 
+
 export const maquetar = async(id) => {
     let user = await getUser(id);
     user = await user.json();
@@ -26,5 +27,10 @@ export const maquetar = async(id) => {
     </div>
     `
 
+    let findUsersCont = document.querySelector("#findUsersCont");
+    let actual = parseInt(findUsersCont.textContent);
+    actual += 1;
+
+    findUsersCont.innerHTML = actual;
     container.innerHTML += plantilla;
 };

@@ -45,11 +45,53 @@ body{
     overflow-y: auto;
 }
 
-
 #infoD1{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: calc(100% - 120px) 120px;
+    grid-template-rows: 1;
+}
+
+#infoD11{
     display: flex;
     align-items: center;
 }
+#infoD12{
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#findUsers{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+    background-color: var(--color-2);
+    width: 80%;
+    height: 60%;
+    border-radius: 20px;
+}
+
+.findUsersInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#findUsersImg{
+    filter: invert();
+    height: 20px;
+    width: 20px;
+}
+
+#findUsersCont{
+    color: #ffffff;
+    font-family: "ComforBold", sans-serif;
+    font-size: 20px;
+}
+
 #infoD2{
     display: flex;
     align-items: center;
@@ -83,6 +125,7 @@ body{
     background-color: var(--color-2);
 }
 #inputSearch{
+    padding-left: 3ch;
     font-family: "ComforRegular", sans-serif;
     font-size: 20px;
     color: #ffffff;
@@ -94,16 +137,23 @@ body{
     background-color: var(--color-2);
     border: none;
 }
+#inputSearch:focus {
+    outline: none;
+}
 
 
 
 .element{
-    margin: 10px;
+    transition: 0.2s;
+    padding: 20px;
     background-color: #ffffff;
     display: grid;
     grid-template-columns: 120px calc(100% - 120px);
     grid-template-rows: 1;
     height: 120px;
+}
+.element:hover{
+    transform: translate(20px);
 }
 
 
