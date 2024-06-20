@@ -15,6 +15,7 @@
     box-sizing: border-box;
 }
 body{
+    background-color: #32323220;
     width: 100vw;
     height: 100vh;
 }
@@ -26,23 +27,25 @@ body{
     width: 100%;
     height: 100%;
     grid-template-columns: 1;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 25% 75%;
 }
 
-.mainBodyDivSection{
-    border: 1px solid black;
-}
+
 #mBDS1{
     background-color: var(--color-1);
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: repeat(2, 1fr);
 }
-
-
-.infoDiv{
-    border: 1px solid black;
+#mBDS2{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+    overflow-y: auto;
 }
+
+
 #infoD1{
     display: flex;
     align-items: center;
@@ -94,11 +97,67 @@ body{
 
 
 
+.element{
+    margin: 10px;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 120px calc(100% - 120px);
+    grid-template-rows: 1;
+    height: 120px;
+}
+
+
+#eS1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#eS2{
+    display: flex;
+    align-items: center;
+}
+
+.imgDiv{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #32323210;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.img{
+    height: 100%;
+}
+
+
+.userTextDiv{
+    margin-left: 20px;
+}
+#userName{
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: "ComoforBold", sans-serif;
+}
+#userLocation{
+    font-family: "ComforRegular", sans-serif;
+    font-size: 20px;
+}
+
+
 @media (max-width: 600px) {
     #title{
         font-size: 24px;
     }
     #subTitle{
         font-size: 14px;
+    }
+    #userName{
+        font-size: 20px;
+    }
+    #userLocation{
+        font-size: 12px;
     }
 }
