@@ -26,7 +26,7 @@ searchBar.addEventListener("change", async() => {
         let userDescript = user.description;
         let userDescript1 = userDescript.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');;
 
-        if (userName1.startsWith(text) || userDescript1.includes(text)){
+        if (userName1.includes(text) || userDescript1.includes(text)){
             let id = user.id;
             await maquetar(id);
             cont ++;
