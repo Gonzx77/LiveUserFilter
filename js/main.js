@@ -11,8 +11,7 @@ searchBar.addEventListener("change", async() => {
     findUsersCont.innerHTML = 0;
 
     let text = searchBar.value;
-    text = text.toLowerCase();
-    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    text = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');;
     
     let data = await getAllUsers();
     data = await data.json();
@@ -22,12 +21,10 @@ searchBar.addEventListener("change", async() => {
     for (let i = 0; i < 100; i++) {
         let user = data[i];
         let userName = user.name_full;
-        let userName1 = userName.toLowerCase();
-        userName1 = userName1.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        let userName1 = userName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');;
 
         let userDescript = user.description;
-        let userDescript1 = userDescript.toLowerCase();
-        userDescript1 = userDescript1.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        let userDescript1 = userDescript.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');;
 
         if (userName1.startsWith(text) || userDescript1.includes(text)){
             let id = user.id;
