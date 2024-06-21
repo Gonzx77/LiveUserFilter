@@ -16,16 +16,25 @@ searchBar.addEventListener("change", async() => {
     let data = await getAllUsers();
     data = await data.json();
 
+    let cont = 0;
+
     for (let i = 0; i < 100; i++) {
         let user = data[i];
-        let userName = data[i].name_full;
+        let userName = user.name_full;
         let userName1 = userName.toLowerCase();
 
-        if (userName1.startsWith(text)){
+        let userDescript = user.description;
+        let userDescript1 = userDescript.toLowerCase();
 
+        if (userName1.startsWith(text) || userDescript1.includes(text)){
             let id = user.id;
             await maquetar(id);
+            cont ++;
         }
-    }
+    };
+
+    if (cont == 0){
+        alert("No se encontraron resultados :(");
+    };
 
 });
